@@ -16,6 +16,7 @@ body {
   font-family: "Open Sans", sans-serif;
   background: #f6f9ff;
   color: #444444;
+  position: relative;
 }
 
 a {
@@ -36,7 +37,12 @@ h5,
 h6 {
   font-family: "Nunito", sans-serif;
 }
-
+@media (min-width: 1080px){
+.col-lg-6 {
+    flex: 0 0 auto;
+    width:70%;
+}
+}
 /*--------------------------------------------------------------
 # Main
 --------------------------------------------------------------*/
@@ -44,9 +50,10 @@ h6 {
   margin-top: 60px;
   padding: 20px 30px;
   transition: all 0.3s;
+  position: absolute;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1080px) {
   #main {
     padding: 20px;
   }
@@ -1231,66 +1238,185 @@ h6 {
   background: #3e4f6f;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1080px) {
   .error-404 img {
     max-width: 50%;
   }
 }
 /*--------------------------------------------------------------
-# Table
+# card-img responsive/card
 --------------------------------------------------------------*/
+@media (min-width: 1080px) {
+  .card-img-top {
+    max-width: 980px;
+    margin: 0 auto 2em;
+    width: 95%;
+  }
+
+}
+.default_card_text{
+ padding-right: 20px;
+}
+  /*--------------------------------------------------------------
+# Table responsive
+--------------------------------------------------------------*/
+.table-responsive {
+  overflow-x: auto;
+}
+
 table {
-  width: 100%;
+  width: 92%;
+  margin: 1em auto 2em;;
   border-collapse: collapse;
 }
-th, td {
 
+th, td {
   padding: 8px;
   text-align: left;
 }
+
 th {
-  background-color:#f6f6ff;
+  background-color: #f6f6ff;
+  font-size: 1rem;
 }
-.table_text{
-color:#669999;
-font-weight:bold;
-white-space: nowrap;
-}
-.bold {
+
+.table_text {
+  color: #669999;
   font-weight: bold;
+  font-size: 1.0rem;
 }
-.product-img-container {
-  width: 50px;
-  height: 50px;
+@media (min-width: 1080px){
+.table_text {
+  white-space: nowrap;
+}
+}
+.product-col {
+  width: 35%;
+}
+.price-col{
+  padding-left: 10%;
+  white-space: nowrap;
+}
+
+.price_td{
+  padding-left: 10%;
+  white-space: nowrap;
+}
+
+.price-col{
+  width: 16.66%; /* This is roughly one-third of the remaining width */
+  padding-right: 10px;
+  padding-left: 10%;
+  white-space: nowrap;
+}
+.revenue-col {
+  width: 45.66%;
+  white-space: nowrap;
+  padding-left: 5%;
+}
+.sold-col {
+  padding-left: 5%;
+  white-space: nowrap;
+}
+.revenue-col{
+  padding-left: 10%;
+  white-space: nowrap;
+}
+.sold_td{
+  font-weight: bold;
+  padding-left: 5%;
+  white-space: nowrap;
+}
+.revenue-td{
+  padding-left: 10%;
+  white-space: nowrap;
 }
 .product-img {
   max-width: 100%;
-  max-height: 100%;
+  height: auto; /* Maintain aspect ratio */
+  aspect-ratio: 1 / 1; /* 1:1 aspect ratio */
   border-radius: 5px; /* Rounded corners for images */
   margin-bottom: 5px; /* Space after the image */
+  max-width: 60px;
 }
+
+/* Responsive design adjustments */
+@media (max-width: 1079px) {
+
+  table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+  .price-col{
+    width: 10.%; /* This is roughly one-third of the remaining width */
+    padding-right: 10px;
+    padding-left: 0.5%;
+  }
+  .price_td{
+    font-weight: bold;
+    padding-left: 0.5%;
+  }
+  .sold-col {
+    padding-left: 0.5%;
+  }
+  .sold_td{
+    font-weight: bold;
+    padding-left: 0.5%;
+  }
+  .revenue-col{
+    padding-left: 0.5%;
+    padding-right: 10px;
+  }
+ .revenue-td{
+  padding-left: 0.5%;
+  padding-right: 10px;
+  }
+  .table_text, .bold {
+      font-size: smaller; /* Smaller text on smaller screens */
+    }
+   
+     
+    .price-col, .sold-col, .revenue-col {
+      width: 24%; /* This is roughly one-third of the remaining width */
+      padding-right: 10px;
+      max-width: 50px;
+
+    }
+    .table-responsive img{
+      width: 75%;
+      height: auto;
+    }
+    .table-responsive th{
+      font-size:70%;
+     }
+    .table-responsive td{
+  font-size:70%;
+ }
+}
+
 /*--------------------------------------------------------------
 # Form
 --------------------------------------------------------------*/
 
-.form-container {
+.submit_reset_form-group {
   /* Adjust the background color as needed */
   padding: 20px;
   border-radius: 5px;
   clear: both
 }
-.name2{
+.submit_reset_form-group .name2{
 height: 100px;
 }
-input[type="text"] {
+.submit_reset_form-group input[type="text"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px; /* Adjust spacing as needed */
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-input[type="submit"] {
-  width: 20%;
+.submit_reset_form-group input[type="submit"] {
+  width: 30%;
   padding: 10px;
   border: none;
   border-radius: 4px;
@@ -1300,12 +1426,26 @@ input[type="submit"] {
   cursor: pointer;
   margin-left: 40%;
 }
-input[type="submit"]:hover {
+.submit_reset_form-group input[type="submit"]:hover {
   background-color: #0056b3; /* Darker shade for hover state */
 }
+
 /*--------------------------------------------------------------
 # Vertical Form
 --------------------------------------------------------------*/
+@media screen and (min-width: 1080px){
+  .Vertical{
+    position: absolute;
+    top: 85px;
+    right: 2%;
+    width: auto;
+    margin-bottom:5%;
+   
+  }
+}
+.Vertical{
+  margin-bottom: 100px;
+}
 .form-container {
   display: flex;
   flex-direction: column;
@@ -1322,23 +1462,24 @@ input[type="submit"]:hover {
 
 .form-group .form-control {
   width: 100%;
-  padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-}
-.form-group .name2 {
-  height: 160px;
+  border-radius: 10px;
 }
 
-/* Keep the rest of your CSS unchanged */
+.form-group .name2 {
+  height: 100px; /* 最低高さ */
+  overflow-y: hidden; /* スクロールバー非表示 */
+  width: 100%; /* 幅を100%に設定 */
+  /* その他のスタイル設定 */
+}
 
 .file-upload-group {
   position: relative;
   display: flex;
   align-items: center;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px;
   white-space: nowrap;
   width:auto;
 }
@@ -1352,7 +1493,7 @@ input[type="submit"]:hover {
 .file-upload-btn {
   background-color: #f8f8f8;
   border-right: 1px solid #ccc;
-  border-radius: 4px 0 0 4px; /* Only round the left corners */
+  border-radius: 10px 0 0 10px; /* Only round the left corners */
   cursor: pointer;
   width:auto;
   height: auto;
@@ -1361,9 +1502,9 @@ input[type="submit"]:hover {
 #file-chosen {
   flex-grow: 1;
   background-color: white;
-  border-radius: 0 4px 4px 0; /* Only round the right corners */
+  border-radius: 0 10px 10px 0; /* Only round the right corners */
   color: #aaa;
-  text-align: center;
+  text-align: left;
 }
 
 .file-upload {
@@ -1382,25 +1523,31 @@ input[type="submit"]:hover {
 .btn {
   padding: 10px 15px;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   color: white;
 }
 
 .submit-btn {
   background-color: #0066ff;
-  margin-right: 5px;
+  margin-right: 1px;
+}
+.submit-btn:hover {
+  background-color:  #0056b3;
+  color: white;
 }
 
 .reset-btn {
   background-color: #666666;
-  margin-left: 5px;
+  margin-left: 1px;
+  color: white;
 }
 
-.btn:hover {
-  opacity: 0.9;
+.reset-btn:hover{
+  background-color: black;
+  color: #fff;
+  font-weight: bolder;
 }
-
 h5.card-title {
   margin-bottom: 20px;
 }
@@ -1408,47 +1555,144 @@ h5.card-title {
 /*--------------------------------------------------------------
 # News
 --------------------------------------------------------------*/
-
-.news-container {
-  padding: 20px; /* Padding inside the card */
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
-
-.news-container h2 {
+.menu-btn {
   font-size: 24px;
   color: #333;
-  margin-bottom: 20px; /* Space after the title */
+  cursor: pointer;
+  border: none;
+  background: none;
+  margin: -45px 0 0 80px;
 }
+  /* Hidden menu styles */
+  .hidden-menu {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+@media screen and (min-width: 1080px){
+  .News{
+    display: block;
+    position: absolute;
+   top: 25%;
+    right: 2%;
+   }  
+   .Vertical, .News {
+    position: absolute; /* Keep them absolutely positioned on larger screens */
+    width: auto; /* Allow them to shrink/expand as needed */
+  }
+ 
+  
 
+
+  
+
+  
+  /* Optional: Style for menu items */
+  .hidden-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .hidden-menu ul li {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .hidden-menu ul li:hover {
+    background-color: #f0f0f0;
+  }
+  .Vertical,.News {
+    left: 70%; /* Position to the left half of the parent */
+  }
 .news-item {
-  margin-bottom: 20px; /* Space between news items */
-  /* Separator line */
-  padding-bottom: 20px; /* Space after each news item */
+  display: flex;
+  margin-bottom: 20px;
 }
 
-.news-item:last-child {
-  border-bottom: 0; /* No separator line for the last item */
-}
-.news-img-container{
-  width:160px;
-  height: 150px;
-}
-.news-item img {
-  max-width: 100%;
-  max-height: 100%; /* Full width of the container */
-  border-radius: 10px; /* Rounded corners for images */
-  margin-bottom: 10px; /* Space after the image */
+
+/* Base styles */
+.news-image {
+ /* Make the image width responsive */
+  min-height: 80px;
+  max-height: 100px;
+  height: auto; /* Adjust the height automatically */
+  aspect-ratio: 4 / 3; /* Maintain a 3:4 aspect ratio */
+  object-fit: cover; /* Cover the frame, but maintain aspect ratio */
+  border-radius: 4px;
+  margin: 10px 5px 10px ;
+  padding: 2px;
 }
 
-.news-item h3 {
+}
+@media screen and (max-width: 1080px) {
+  .Vertical, .News {
+ 
+    width: 100%; /* Make them take full width */
+    margin-top: 20px; /* Add some space between the elements */
+  }
+
+  #main .row {
+    flex-direction: column; /* Stack the children vertically */
+  }
+  .news-image{
+    width: 100%;
+    margin:0 auto;
+  }
+  .news-item {
+    flex-direction: column;
+  }
+
+  .news-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+}
+
+
+/* Responsive styles for even smaller screens, if necessary */
+@media screen and (max-width: 480px) {
+  .news-image {
+    max-width: 120px;
+    max-height: 80px;
+    width: 75%; /* Full width on very small screens */
+    margin-right: 0; /* Adjust margin if needed */
+    margin-top: 10px; /* Adjust margin if needed */
+  }
+}
+
+
+.news-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.news-headline {
   font-size: 18px;
-  color: #000;
+  color: #012970;
+  margin: -10px 0 5px 0;
 }
 
-.news-item p {
+.news-summary {
   font-size: 14px;
-  color: #555;
+  color: #666;
+  margin: 0;
 }
-
 
 /*--------------------------------------------------------------
 # Footer
@@ -1458,6 +1702,7 @@ h5.card-title {
   font-size: 14px;
   transition: all 0.3s;
   border-top: 1px solid #cddfff;
+  
 }
 
 .footer .copyright {
