@@ -50,7 +50,7 @@ h6 {
   margin-top: 60px;
   padding: 20px 30px;
   transition: all 0.3s;
-  position: absolute;
+ 
 }
 
 @media (max-width: 1080px) {
@@ -652,7 +652,7 @@ h6 {
   background-color: #aab7cf;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1080px) {
 
   #main,
   #footer {
@@ -660,13 +660,13 @@ h6 {
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1079px) {
   .toggle-sidebar .sidebar {
     left: 0;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1080px) {
 
   .toggle-sidebar #main,
   .toggle-sidebar #footer {
@@ -1545,7 +1545,7 @@ height: 100px;
 
 .reset-btn:hover{
   background-color: black;
-  color: #fff;
+  color: #666666;
   font-weight: bolder;
 }
 h5.card-title {
@@ -1555,12 +1555,7 @@ h5.card-title {
 /*--------------------------------------------------------------
 # News
 --------------------------------------------------------------*/
-.news-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-}
+
 .menu-btn {
   font-size: 24px;
   color: #333;
@@ -1569,7 +1564,27 @@ h5.card-title {
   background: none;
   margin: -45px 0 0 80px;
 }
-  /* Hidden menu styles */
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+
+@media screen and (min-width: 1080px){
+  .News{
+    position: absolute;
+   top: 25%;
+    right: 2%;
+   }  
+   .Vertical, .News {
+    position: absolute; /* Keep them absolutely positioned on larger screens */
+    width: 25%;
+    right: 2%;        
+    /* Allow them to shrink/expand as needed */
+  }
+
   .hidden-menu {
     display: none;
     position: absolute;
@@ -1581,23 +1596,6 @@ h5.card-title {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
-@media screen and (min-width: 1080px){
-  .News{
-    display: block;
-    position: absolute;
-   top: 25%;
-    right: 2%;
-   }  
-   .Vertical, .News {
-    position: absolute; /* Keep them absolutely positioned on larger screens */
-    width: auto; /* Allow them to shrink/expand as needed */
-  }
- 
-  
-
-
-  
-
   
   /* Optional: Style for menu items */
   .hidden-menu ul {
@@ -1614,14 +1612,29 @@ h5.card-title {
   .hidden-menu ul li:hover {
     background-color: #f0f0f0;
   }
+  /* Hidden menu styles */
+  
+ 
+  .hidden-menu ul li:hover {
+    background-color: #f0f0f0;
+  }
   .Vertical,.News {
-    left: 70%; /* Position to the left half of the parent */
+    left: 75%; 
+    right: 10px;
+    position: absolute;/* Position to the left half of the parent */
   }
 .news-item {
   display: flex;
   margin-bottom: 20px;
 }
-
+@media screen and (min-width: 1079px) {
+ .news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+}
 
 /* Base styles */
 .news-image {
@@ -1649,7 +1662,7 @@ h5.card-title {
   }
   .news-image{
     width: 100%;
-    margin:0 auto;
+    margin:20px auto;
   }
   .news-item {
     flex-direction: column;
@@ -1660,6 +1673,17 @@ h5.card-title {
     height: auto;
     margin-bottom: 10px;
   }
+  .news-title{
+    position: relative;
+    width: 100%;
+  }
+  .hidden-menu ul {
+    position: absolute;
+    right: 2%;
+    top:2%;
+  }
+  
+  
 }
 
 
@@ -1679,7 +1703,7 @@ h5.card-title {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 20px;
+  
 }
 
 .news-headline {
@@ -1697,6 +1721,7 @@ h5.card-title {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
 .footer {
   padding: 20px 0;
   font-size: 14px;
